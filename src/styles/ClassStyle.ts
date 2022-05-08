@@ -1,2 +1,37 @@
 import styled from "styled-components";
 
+export const HeaderInput = styled.header`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 1rem;
+`
+
+export const SearchInput = styled.input`
+    width: 75%;
+    height: 35px;
+    padding: 0 1rem 0 1rem;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    background-color: transparent;
+
+    &::placeholder{
+        color: gray;
+    }
+
+    &:focus{
+        background-color: var(--white);
+    }
+`
+
+export const BtnSearch = styled.button`
+    width: 120px;
+    height: 35px;
+    padding: 0 1rem 0 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--white);
+`
+

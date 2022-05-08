@@ -4,9 +4,11 @@ import {NavBG,Logo,NavContainer,NavItem} from './style'
 export default function Navbar(){
     return(
         <NavBG>
-            <Logo>
-                Aulaki
-            </Logo>
+            <Link href='/'>
+                <Logo>
+                    Aulaki
+                </Logo>
+            </Link>
             <NavContainer>
                 <Link href='/aulas'>
                     <NavItem>Aulas</NavItem>
