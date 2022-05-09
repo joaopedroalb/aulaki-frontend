@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { PageBG } from "../styles/PagesComps";
-import { Header, TeacherContent } from "../styles/TeacherStyle";
+import { CardsContainer, Header, TeacherContent } from "../styles/TeacherStyle";
 import {useRouter} from 'next/router'
 import Link from "next/link";
+import CardTeacher from "../components/CardTeacher";
 
 export type TeacherData = {
   id:number,
@@ -47,19 +48,27 @@ export default function Teacher() {
         <Navbar />
         <TeacherContent>
           <Header>
-            <input type="text" onChange={({target})=>setQueryName(target.value)} placeholder="Pesquisar pelo nome ..."/>
-            <input type="text" onChange={({target})=>setQueryCity(target.value)} placeholder="Pesquisar pela cidade ..."/>
+            <input  type="text" 
+                    onChange={({target})=>setQueryName(target.value)} 
+                    placeholder="Pesquisar pelo nome ..."
+                    className="inputName"
+            />
+            <input  type="text" 
+                    onChange={({target})=>setQueryCity(target.value)} 
+                    placeholder="Pesquisar pela cidade ..."
+                    className="inputCity"        
+            />
             <Link href={`/professores?city=${queryCity}&name=${queryName}`}>
               <button>
                 Pesquisar
               </button>
             </Link>
           </Header>
-          <div>
+          <CardsContainer>
             {
-              teachers&&teachers.map(teacher=><p key={teacher.id}>{teacher.name}</p>)
+              teachers&&teachers.map(teacher=><CardTeacher key={teacher.id} {...teacher} />)
             }
-          </div>
+          </CardsContainer>
         </TeacherContent>
     </PageBG>
   )

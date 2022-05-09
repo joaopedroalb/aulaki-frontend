@@ -25,6 +25,14 @@ export const Header = styled.div`
         border-radius: 5px;
     }
 
+    .inputCity{
+        max-width: 30%;
+    }
+
+    .inputName{
+        flex-grow: 3;
+    }
+
     button{
         height: 30px;
         width: 100px;
@@ -32,4 +40,13 @@ export const Header = styled.div`
         border: none;
         border-radius: 5px;
     }
+`
+
+export const CardsContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 `
