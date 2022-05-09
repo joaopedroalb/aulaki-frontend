@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { PageBG } from "../styles/PagesComps";
 import {useRouter} from 'next/router'
 import Link from "next/link";
-import { BtnSearch, HeaderInput, SearchInput,LessonsContainer, TagSelect } from "../styles/ClassStyle";
+import { BtnSearch, HeaderInput, SearchInput,LessonsContainer, TagSelect, LessonsBG } from "../styles/ClassStyle";
 import CardLessons from "../components/CardLessons";
 
 export type LessonType = {
@@ -56,11 +56,11 @@ export default function Aulas() {
   return (
     <PageBG bgColor="var(--l-blue)">
         <Navbar/>
-        <div>
+        <LessonsBG>
           <HeaderInput>
             <SearchInput type="text" onChange={({target})=>setFilter(target.value)} value={filter} placeholder="Pesquise por titulos ..."/>
             <TagSelect onChange={({target})=>setFilterTags(target.value)}>
-              <option selected value="">All</option>
+              <option defaultValue={""} value="">All</option>
               {
                 tags&&tags.map((tag,i:number)=><option key={i} value={tag}>{tag}</option>)
               }
@@ -74,7 +74,7 @@ export default function Aulas() {
               lessons&&getList(lessons).map(lesson=><CardLessons {...lesson} key={lesson.id}/>)
             }
           </LessonsContainer>
-        </div>
+        </LessonsBG>
     </PageBG>
   )
 }

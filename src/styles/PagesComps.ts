@@ -11,5 +11,4 @@ export const PageBG = styled.div<PageProps>`
     flex-direction: column;
     justify-content: flex-start;
     background-color: ${props => props.bgColor};
-    padding-bottom: 1rem;
 `

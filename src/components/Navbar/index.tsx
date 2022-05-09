@@ -13,7 +13,9 @@ export default function Navbar(){
                 <Link href='/aulas'>
                     <NavItem>Aulas</NavItem>
                 </Link>
-                <NavItem>Professores</NavItem>
+                <Link href="/professores">
+                    <NavItem>Professores</NavItem>
+                </Link>
             </NavContainer>
         </NavBG>
     )

@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const LessonsBG = styled.div`
+    width: 100%;
+    padding-bottom: 1rem;
+`
+
 export const HeaderInput = styled.header`
     width: 100%;
     display: flex;
