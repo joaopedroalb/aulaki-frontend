@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { LessonType } from "../../pages/aulas";
-import { Card } from "./style";
+import Tag from "../Tag";
+import { Card, ContactContainer, Curves, Header, TagContainer } from "./style";
 
 const BASE_URL = 'http://localhost:9090/teacher'
 
@@ -22,9 +23,20 @@ export default function CardLessons({id,title,isRemote, teacher_id, tags}:Lesson
 
   return (
     <Card>
-      <h1>{title}</h1>
+      <Header>
+        <h1>{title}</h1>
+        <p>{teacherName ? teacherName:"Not defined"}</p>
+      </Header>
       <p>{isRemote ? "Remoto":"Presencial"}</p>
-      <p>{teacherName ? teacherName:"Not defined"}</p>
+      <TagContainer>
+        {
+          tags&&tags.map(tag=><Tag key={tag} name={tag}/>)
+        }
+      </TagContainer>
+      <ContactContainer>
+        <p>Entre em contato: </p>
+      </ContactContainer>
+      <Curves className="curves"></Curves>
     </Card>
   )
 }
