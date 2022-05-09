@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { LessonType } from "../../pages/aulas";
 import Tag from "../Tag";
 import { Card, ContactContainer, Curves, Header, TagContainer } from "./style";
+import {BsWhatsapp, BsFacebook} from 'react-icons/bs'
+import Link from "next/link";
 
 const BASE_URL = 'http://localhost:9090/teacher'
 
@@ -34,7 +36,13 @@ export default function CardLessons({id,title,isRemote, teacher_id, tags}:Lesson
         }
       </TagContainer>
       <ContactContainer>
-        <p>Entre em contato: </p>
+        <p>Entre em contato </p>
+        <Link href="https://wa.me/5585999999999">
+          <BsWhatsapp/>
+        </Link> 
+        <Link href="https://www.facebook.com/">
+          <BsFacebook />
+        </Link>
       </ContactContainer>
       <Curves className="curves"></Curves>
     </Card>

@@ -10,7 +10,8 @@ export const HeaderInput = styled.header`
 `
 
 export const SearchInput = styled.input`
-    width: 75%;
+    max-width: 75%;
+    flex: 1;
     height: 35px;
     padding: 0 1rem 0 1rem;
     border: none;
@@ -24,6 +25,14 @@ export const SearchInput = styled.input`
     &:focus{
         background-color: var(--white);
     }
+`
+
+export const TagSelect = styled.select`
+    height: 35px;
+    border: none;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 5px;
 `
 
 export const BtnSearch = styled.button`

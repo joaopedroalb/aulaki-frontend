@@ -68,6 +68,7 @@ export const Curves = styled.div`
 export const TagContainer = styled.div`
     z-index: 2;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -77,4 +78,14 @@ export const TagContainer = styled.div`
 export const ContactContainer = styled.div`
     z-index: 2;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 20px;
+
+    svg{
+        cursor: pointer;
+    }
 `
