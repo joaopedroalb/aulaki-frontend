@@ -35,3 +35,12 @@ export const BtnSearch = styled.button`
     background-color: var(--white);
 `
 
+export const LessonsContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    padding: 0 2rem 0 2rem;
+`
+

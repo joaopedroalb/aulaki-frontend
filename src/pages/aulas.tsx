@@ -3,13 +3,14 @@ import Navbar from "../components/Navbar";
 import { PageBG } from "../styles/PagesComps";
 import {useRouter} from 'next/router'
 import Link from "next/link";
-import { BtnSearch, HeaderInput, SearchInput } from "../styles/ClassStyle";
+import { BtnSearch, HeaderInput, SearchInput,LessonsContainer } from "../styles/ClassStyle";
+import CardLessons from "../components/CardLessons";
 
-type Lessons = {
-  id: number,
+export type LessonType = {
+  id: number, 
   title:string,
   isRemote: boolean,
-  teacherId: number,
+  teacher_id: number,
   tags:Array<string>
 }
 
@@ -22,7 +23,7 @@ export default function Aulas() {
   const {title} = router.query
   const [filter,setFilter] = useState<string>('')
 
-  const [lessons, setLessons] = useState<Array<Lessons>|null>(null)
+  const [lessons, setLessons] = useState<Array<LessonType>|null>(null)
 
   const getData = useCallback(async () =>{
     const res = title ? await fetch(BASE_URL+`?title=${title}`):await fetch(BASE_URL)
@@ -46,11 +47,11 @@ export default function Aulas() {
               <BtnSearch >Pesquisar</BtnSearch>
             </Link>
           </HeaderInput>
-          <div>
+          <LessonsContainer>
             {
-              lessons&&lessons.map(lesson=><p key={lesson.id}>{lesson.title}</p>)
+              lessons&&lessons.map(lesson=><CardLessons {...lesson} key={lesson.id}/>)
             }
-          </div>
+          </LessonsContainer>
         </div>
     </PageBG>
   )
