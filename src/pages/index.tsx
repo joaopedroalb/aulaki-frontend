@@ -11,6 +11,7 @@ import TeacherImage from '../../public/teacherImageChoose.svg'
 import AboutImg from '../../public/aboutLogo.svg'
 import { useState } from 'react'
 import Link from 'next/link'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   const [isStudent, setIsStudant] = useState(true)
@@ -81,11 +82,11 @@ const Home: NextPage = () => {
       </AboutSection>
       {ChooseSectionRender()}
       <InfoLessonsAndTeacherContainer>
-        Atualmente nossa plataforma temos X professores com um total de x cursos de diversas áreas
+        <p>
+          Atualmente nossa plataforma temos X professores com um total de x cursos de diversas áreas
+        </p>
       </InfoLessonsAndTeacherContainer>
-      <footer>
-        Footer
-      </footer>
+      <Footer/>
     </PageBG>
   )
 }

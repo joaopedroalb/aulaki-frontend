@@ -105,10 +105,31 @@ export const ChooseBtnContainer = styled.div`
 `
 
 export const InfoLessonsAndTeacherContainer = styled.div`
+    background: hsla(0, 0%, 100%, 1);
+    background: linear-gradient(283deg,hsl(0deg 0% 100%) 0%,hsl(107deg 99% 66% / 53%) 100%);
+    background: -moz-linear-gradient(283deg,hsl(0deg 0% 100%) 0%,hsl(107deg 99% 66% / 53%) 100%);
+    background: -webkit-linear-gradient(283deg,hsl(0deg 0% 100%) 0%,hsl(107deg 99% 66% / 53%) 100%);
+    
     width: 100%;
-    min-height: 90vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+
+    p{
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 100;
+        width: 80%;
+
+        @media screen and (max-width:700px){
+            font-size: 4rem;
+        }
+
+        @media screen and (max-width:560px){
+            font-size: 3rem;
+        }
+    }
 `
