@@ -2,7 +2,7 @@ import styled  from "styled-components";
 
 export const NavBG = styled.div`
     width: 100%;
-    height: 5rem;
+    height: 70px;
     background-color: var(--white);
     color: var(--black);
     display: flex;
@@ -13,6 +13,7 @@ export const NavBG = styled.div`
 
 export const Logo = styled.h1`
     font-size: 1.5rem;
+    cursor: pointer;
 `
 
 export const NavContainer = styled.nav`

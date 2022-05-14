@@ -31,7 +31,7 @@ export default function CardTeacher({id,name,nickname,city}:TeacherData) {
                 <InfosContainer>
                     <p><strong>{city}</strong></p>
                     <p><strong>
-                        {name}</strong> de {city} traz tem um total 
+                        {name}</strong> de {city} tem um total 
                         de {lessonsCount} {lessonsCount>1?"aulas":"aula"} na nossa plataforma
                     </p>
                 </InfosContainer>
