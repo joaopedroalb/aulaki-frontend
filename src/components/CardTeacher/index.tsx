@@ -1,3 +1,4 @@
+import path from "path";
 import { useCallback, useEffect, useState } from "react";
 import { TeacherData } from "../../pages/professores"
 import { BodyContent, InfosContainer, TeacherCard } from "./style";
@@ -5,7 +6,7 @@ import { BodyContent, InfosContainer, TeacherCard } from "./style";
 const IMAGE_DEFAULT = "https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"
 const BASE_URL = "http://localhost:9090/class/teacher/"
 
-export default function CardTeacher({id,name,nickname,city}:TeacherData) {
+export default function CardTeacher({id,name,nickname,city,pathImage}:TeacherData) {
     const [lessonsCount,setLessonsCount] = useState(0)
 
     const getData = useCallback(async () =>{
@@ -21,12 +22,16 @@ export default function CardTeacher({id,name,nickname,city}:TeacherData) {
     useEffect(()=>{
         getData()
     },[getData])
+
+    const getPathImg = () =>{
+        return pathImage != ''? pathImage:IMAGE_DEFAULT;
+    }
     
     return (
         <TeacherCard>
             <header></header>
             <BodyContent>
-                <img src={IMAGE_DEFAULT} alt="Foto de perfil"/>
+                <img src={getPathImg()} alt="Foto de perfil"/>
                 <h1>{nickname}</h1>
                 <InfosContainer>
                     <p><strong>{city}</strong></p>

@@ -7,27 +7,41 @@ import Link from "next/link";
 
 const BASE_URL = 'http://localhost:9090/teacher'
 
+type TeacherInfos = {
+  name:string
+  nickname:string
+  phone:string
+  facebook:string
+}
+
 export default function CardLessons({id,title,isRemote, teacher_id, tags}:LessonType) {
 
-  const [teacherName,setTeacherName] = useState<string|null>(null)
+  const [teacher,setTeacher] = useState<TeacherInfos|null>(null)
 
-  const getTeacherName = useCallback(async () =>{
+  const getTeacher = useCallback(async () =>{
 
     const res = await fetch(BASE_URL+`/search/${teacher_id}`)
     const data = await res.json()
+    const {name,nickname,phone,facebook} = data
 
-    setTeacherName(data.name)
+    setTeacher({name,nickname,phone,facebook})
   },[teacher_id])
 
+  const getUrlWpp = () =>{
+    const msg = ('Ola gostaria de ter aula de '+title).replaceAll(/\s/g,"%20")
+    const link = `https://api.whatsapp.com/send/?phone=${teacher?.phone}&app_absent=0&text=${msg}`
+    return link
+  }
+
   useEffect(()=>{
-    getTeacherName()
-  },[getTeacherName])
+    getTeacher()
+  },[getTeacher])
 
   return (
     <Card>
       <Header>
         <h1>{title}</h1>
-        <p>{teacherName ? teacherName:"Not defined"}</p>
+        <p>{teacher?.name ? teacher.name:"Not defined"}</p>
       </Header>
       <p>{isRemote ? "Remoto":"Presencial"}</p>
       <TagContainer>
@@ -37,10 +51,10 @@ export default function CardLessons({id,title,isRemote, teacher_id, tags}:Lesson
       </TagContainer>
       <ContactContainer>
         <p>Entre em contato </p>
-        <Link href="https://wa.me/5585999999999">
+        <Link href={teacher != null ? getUrlWpp(): ''}>
           <BsWhatsapp/>
         </Link> 
-        <Link href="https://www.facebook.com/">
+        <Link href={teacher != null ? teacher.facebook:''}>
           <BsFacebook />
         </Link>
       </ContactContainer>

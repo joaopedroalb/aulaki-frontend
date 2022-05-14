@@ -11,6 +11,9 @@ export type TeacherData = {
   name:string
   nickname:string
   city:string
+  phone:string
+  pathImage:string
+  facebook:string
 }
 
 const BASE_URL = 'http://localhost:9090/teacher'

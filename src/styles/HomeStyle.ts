@@ -103,3 +103,12 @@ export const ChooseBtnContainer = styled.div`
     display: flex;
     gap: 1rem;
 `
+
+export const InfoLessonsAndTeacherContainer = styled.div`
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`

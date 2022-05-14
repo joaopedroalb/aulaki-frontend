@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Navbar from '../components/Navbar'
 import { ImageBG, BlurBG, AboutSection, AbotInfo, ChooseSection, 
-        ImageContainer, TextChooseContainer, ChooseBtnContainer } from '../styles/HomeStyle'
+        ImageContainer, TextChooseContainer, ChooseBtnContainer,
+        InfoLessonsAndTeacherContainer} from '../styles/HomeStyle'
 import { PageBG } from '../styles/PagesComps'
 import Image from 'next/image'
 
@@ -79,9 +80,9 @@ const Home: NextPage = () => {
         <Image src={AboutImg} alt="Icon of two person studying" width={600} height={600}/>
       </AboutSection>
       {ChooseSectionRender()}
-      <section>
-        Cursos hoje
-      </section>
+      <InfoLessonsAndTeacherContainer>
+        Atualmente nossa plataforma temos X professores com um total de x cursos de diversas áreas
+      </InfoLessonsAndTeacherContainer>
       <footer>
         Footer
       </footer>
