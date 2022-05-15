@@ -104,7 +104,7 @@ export const ChooseBtnContainer = styled.div`
     gap: 1rem;
 `
 
-export const InfoLessonsAndTeacherContainer = styled.div`
+export const InfoLessonsAndTeacherContainer = styled.section`
     background: hsla(0, 0%, 100%, 1);
     background: linear-gradient(283deg,hsl(0deg 0% 100%) 0%,hsl(107deg 99% 66% / 53%) 100%);
     background: -moz-linear-gradient(283deg,hsl(0deg 0% 100%) 0%,hsl(107deg 99% 66% / 53%) 100%);

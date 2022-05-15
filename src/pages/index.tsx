@@ -9,12 +9,33 @@ import Image from 'next/image'
 import StudantImage from '../../public/studantImage.svg'
 import TeacherImage from '../../public/teacherImageChoose.svg'
 import AboutImg from '../../public/aboutLogo.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Footer from '../components/Footer'
 
+const BASE_URL_TEACHER = 'http://localhost:9090/teacher'
+const BASE_URL_LESSON = "http://localhost:9090/class"
+
 const Home: NextPage = () => {
   const [isStudent, setIsStudant] = useState(true)
+  const [teachersCount,setTeachersCount] = useState(0)
+  const [lessonsCount,setLessonsCount] = useState(0)
+
+  const getCountsData = async() =>{
+    const resTeacher = await fetch(BASE_URL_TEACHER)
+    const dataTeacher = await resTeacher.json()
+
+    setTeachersCount(dataTeacher.length)
+
+    const resLesson = await fetch(BASE_URL_LESSON)
+    const dataLesson = await resLesson.json()
+
+    setLessonsCount(dataLesson.length)
+  }
+
+  useEffect(()=>{
+    getCountsData()
+  },[])
 
   const ChooseSectionRender = () =>{
     if(isStudent)
@@ -83,7 +104,9 @@ const Home: NextPage = () => {
       {ChooseSectionRender()}
       <InfoLessonsAndTeacherContainer>
         <p>
-          Atualmente nossa plataforma temos X professores com um total de x cursos de diversas áreas
+          Atualmente nossa plataforma temos <strong>{teachersCount}</strong> professores 
+          com um total de <strong>{lessonsCount} </strong>
+          cursos de diversas áreas
         </p>
       </InfoLessonsAndTeacherContainer>
       <Footer/>
