@@ -94,7 +94,7 @@ const Home: NextPage = () => {
         <AbotInfo>
           <h1>Quem somos ?</h1>
           <p>
-            <strong>Aulaki</strong> é uma plataforma que junta alguem que busca conhecimento com alguem que quer ensinar <br/>
+            <strong>Aulaki</strong> é uma plataforma que junta alguem que busca conhecimento com alguem que quer ensinar. <br/>
             Caso você seja um aluno você pode verificar as aulas disponiveis com diversos professores parceiros. 
             Caso você seja um professor você pode se cadastrar na plataformar e divulgar suas aulas aqui. 
           </p>
@@ -104,9 +104,8 @@ const Home: NextPage = () => {
       {ChooseSectionRender()}
       <InfoLessonsAndTeacherContainer>
         <p>
-          Atualmente nossa plataforma temos <strong>{teachersCount}</strong> professores 
-          com um total de <strong>{lessonsCount} </strong>
-          cursos de diversas áreas
+          Atualmente nossa plataforma tem <strong>{teachersCount}</strong> professores 
+          com um total de <strong>{lessonsCount} </strong> cursos de diversas áreas
         </p>
       </InfoLessonsAndTeacherContainer>
       <Footer/>
