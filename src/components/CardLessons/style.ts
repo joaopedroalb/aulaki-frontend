@@ -14,6 +14,7 @@ export const Card = styled.div`
     position: relative;
     overflow: hidden;
     box-shadow: 5px 8px 4px 3px rgb(0 0 0 / 25%);
+    cursor: pointer;
 
     h1{
         font-size: 1.5rem;
@@ -25,7 +26,10 @@ export const Card = styled.div`
         z-index: 2;
     }
 
+    transition: 400ms;
+
     &:hover{
+        transform: scale(1.05);
         .curves::before{
             background-color: hsl(216deg 100% 28%);
         }
