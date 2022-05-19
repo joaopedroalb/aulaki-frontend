@@ -14,7 +14,7 @@ export type LessonType = {
   tags:Array<string>
 }
 
-const BASE_URL = "http://localhost:9090/class"
+const BASE_URL = "https://aulaki-api.herokuapp.com/class"
 
 
 export default function Aulas() {
@@ -46,7 +46,7 @@ export default function Aulas() {
     getTags()
   },[getData])
 
-  const getList = (lst:Array<LessonType>) => {
+  const getList = (lst:Array<LessonType>):Array<LessonType> => {
     const filterList = filterTag !="" ? lst.filter(x=>x.tags.indexOf(filterTag)>=0) : lst
 
     return filterList

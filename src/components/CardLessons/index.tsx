@@ -5,7 +5,7 @@ import { Card, ContactContainer, Curves, Header, TagContainer } from "./style";
 import {BsWhatsapp, BsFacebook} from 'react-icons/bs'
 import Link from "next/link";
 
-const BASE_URL = 'http://localhost:9090/teacher'
+const BASE_URL = 'https://aulaki-api.herokuapp.com/teacher'
 
 type TeacherInfos = {
   name:string

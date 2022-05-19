@@ -16,7 +16,7 @@ export type TeacherData = {
   facebook:string
 }
 
-const BASE_URL = 'http://localhost:9090/teacher'
+const BASE_URL = 'https://aulaki-api.herokuapp.com/teacher'
 
 export default function Teacher() {
 

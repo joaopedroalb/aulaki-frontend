@@ -13,8 +13,8 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Footer from '../components/Footer'
 
-const BASE_URL_TEACHER = 'http://localhost:9090/teacher'
-const BASE_URL_LESSON = "http://localhost:9090/class"
+const BASE_URL_TEACHER = 'https://aulaki-api.herokuapp.com/teacher'
+const BASE_URL_LESSON = "https://aulaki-api.herokuapp.com/class"
 
 const Home: NextPage = () => {
   const [isStudent, setIsStudant] = useState(true)
