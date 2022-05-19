@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       return (
         <ChooseSection>
           <ImageContainer>
-            <Image src={StudantImage} alt="Icon of two person studying" width={450} height={450}/>
+            <Image src={StudantImage} alt="Icone de um estudante" width={450} height={450}/>
           </ImageContainer>
           <TextChooseContainer>
             <p>
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
             </ChooseBtnContainer>
           </TextChooseContainer>
           <ImageContainer>
-            <Image src={TeacherImage} alt="Icon of two person studying" width={450} height={450}/>
+            <Image src={TeacherImage} alt="Icone de uma pessoa dando aula" width={450} height={450}/>
           </ImageContainer>
         </ChooseSection>
       )
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
             Caso você seja um professor você pode se cadastrar na plataformar e divulgar suas aulas aqui. 
           </p>
         </AbotInfo>
-        <Image src={AboutImg} alt="Icon of two person studying" width={600} height={600}/>
+        <Image src={AboutImg} alt="Icone de duas pessoas estudando" width={600} height={600}/>
       </AboutSection>
       {ChooseSectionRender()}
       <InfoLessonsAndTeacherContainer>
