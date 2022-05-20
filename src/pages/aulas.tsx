@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { PageBG } from "../styles/PagesComps";
 import {useRouter} from 'next/router'
 import Link from "next/link";
-import { BtnSearch, HeaderInput, SearchInput,LessonsContainer, TagSelect, LessonsBG } from "../styles/ClassStyle";
+import { BtnSearch, HeaderInput, SearchInput,InptContainer,LessonsContainer, TagSelect, LessonsBG } from "../styles/ClassStyle";
 import CardLessons from "../components/CardLessons";
 
 export type LessonType = {
@@ -59,15 +59,17 @@ export default function Aulas() {
         <LessonsBG>
           <HeaderInput>
             <SearchInput type="text" onChange={({target})=>setFilter(target.value)} value={filter} placeholder="Pesquise por titulos ..."/>
-            <TagSelect onChange={({target})=>setFilterTags(target.value)}>
-              <option defaultValue={""} value="">All</option>
-              {
-                tags&&tags.map((tag,i:number)=><option key={i} value={tag}>{tag}</option>)
-              }
-            </TagSelect>
-            <Link href={`/aulas?title=${filter}`}>
-              <BtnSearch >Pesquisar</BtnSearch>
-            </Link>
+            <InptContainer>
+              <TagSelect onChange={({target})=>setFilterTags(target.value)}>
+                <option defaultValue={""} value="">All</option>
+                {
+                  tags&&tags.map((tag,i:number)=><option key={i} value={tag}>{tag}</option>)
+                }
+              </TagSelect>
+              <Link href={`/aulas?title=${filter}`}>
+                <BtnSearch >Pesquisar</BtnSearch>
+              </Link>
+            </InptContainer>
           </HeaderInput>
           <LessonsContainer>
             {

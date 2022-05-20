@@ -4,7 +4,7 @@ import { TeacherData } from "../../pages/professores"
 import { BodyContent, InfosContainer, TeacherCard } from "./style";
 
 const IMAGE_DEFAULT = "https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"
-const BASE_URL = "https://aulaki-api.herokuapp.com/teacher/"
+const BASE_URL = "https://aulaki-api.herokuapp.com/class/teacher/"
 
 export default function CardTeacher({id,name,nickname,city,pathImage}:TeacherData) {
     const [lessonsCount,setLessonsCount] = useState(0)

@@ -8,9 +8,16 @@ export const LessonsBG = styled.div`
 export const HeaderInput = styled.header`
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    gap: 1rem;
+`
+
+export const InptContainer = styled.div`
+    display: flex;
+    align-items: center;
     gap: 1rem;
 `
 
